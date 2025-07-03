@@ -1,4 +1,4 @@
-# 🎥 YouTube Title & Description Generator
+# 🎥 YTGenie
 
 This project is an **AI-based text generation tool** that generates YouTube video titles and descriptions based on a user's input prompt (video topic). It's built using **Hugging Face Transformers** and fine-tuned on a custom dataset of 2,000 rows.
 
