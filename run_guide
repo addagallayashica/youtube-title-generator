@@ -1,0 +1,135 @@
+
+🧠 YouTube Title & Description Generator - Complete Run Guide
+=============================================================
+
+📁 Project Folder Structure:
+----------------------------
+
+youtube-gen_model/
+├── data/
+│   ├── train.csv              ← Raw training data (prompt, title, description)
+│   ├── test.csv               ← Raw testing data
+│   ├── train.txt              ← Converted training text for GPT2
+│   └── test.txt               ← Converted test text for GPT2
+├── model_output/              ← Trained model saved here after training
+├── scripts/
+│   ├── generate_dataset.py    ← Generates synthetic train/test CSVs
+│   ├── prepare_data.py        ← Converts CSVs to .txt for training
+│   ├── train.py               ← Fine-tunes GPT-2
+│   └── generate.py            ← Generates title & description from user prompt
+├── requirements.txt           ← All dependencies
+├── README.md                  ← Project description and setup
+└── run_guide.txt              ← This file!
+
+------------------------------------------------------------
+
+🔧 STEP 1: Go to Project Directory
+----------------------------------
+
+```bash
+cd /path/to/youtube-gen_model
+```
+
+Example:
+
+```bash
+cd /Users/kcsn/Downloads/projects/youtube-gen_model
+```
+
+------------------------------------------------------------
+
+🐍 STEP 2: Create & Activate Virtual Environment
+------------------------------------------------
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+For Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+------------------------------------------------------------
+
+📦 STEP 3: Install Dependencies
+-------------------------------
+
+```bash
+pip install -r requirements.txt
+```
+
+Or manually:
+
+```bash
+pip install transformers torch pandas faker
+```
+
+------------------------------------------------------------
+
+🧪 STEP 4: Generate Dataset (Optional)
+--------------------------------------
+
+```bash
+python scripts/generate_dataset.py
+```
+
+This creates `train.csv` and `test.csv` with fake YouTube-style prompt → title/description rows.
+
+------------------------------------------------------------
+
+📝 STEP 5: Prepare Data for Training
+------------------------------------
+
+```bash
+python scripts/prepare_data.py
+```
+
+This converts the CSVs to `train.txt` and `test.txt` used by GPT-2.
+
+------------------------------------------------------------
+
+🧠 STEP 6: Fine-Tune GPT-2 Model
+--------------------------------
+
+```bash
+python scripts/train.py
+```
+
+Model will be saved in the `model_output/` folder.
+
+------------------------------------------------------------
+
+🤖 STEP 7: Run the Generator
+----------------------------
+
+```bash
+python scripts/generate.py
+```
+
+Prompt:
+```
+📥 Enter video topic (or 'exit'): How to become a UI/UX designer
+📌 Title: How to become a UI/UX designer
+📝 Description: Master UI/UX design with easy tips, tools, and practice strategies for 2025!
+```
+
+------------------------------------------------------------
+
+📦 STEP 8: (Optional) Save Requirements
+---------------------------------------
+
+```bash
+pip freeze > requirements.txt
+```
+
+------------------------------------------------------------
+
+✅ You’re Done!
+---------------
+
+You now have a local AI app that generates YouTube content ideas from any topic.
+
+Happy coding! 🚀
